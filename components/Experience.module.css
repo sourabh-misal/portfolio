@@ -1,0 +1,221 @@
+.bg {
+  background: linear-gradient(180deg, var(--bg-primary) 0%, #0c0c0c 50%, var(--bg-primary) 100%);
+}
+
+/* ========= TIMELINE ========= */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-bottom: 4rem;
+}
+
+.timelineItem {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.timelineDot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1.75rem;
+}
+
+.dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--cyan);
+  border: 2px solid var(--bg-primary);
+  box-shadow: 0 0 12px rgba(0, 245, 212, 0.6);
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.dotGreen {
+  background: var(--green);
+  box-shadow: 0 0 12px rgba(57, 255, 20, 0.6);
+}
+
+.line {
+  flex: 1;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--cyan), transparent);
+  margin-top: 6px;
+  min-height: 2rem;
+}
+
+/* ========= CARD ========= */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  border-color: rgba(0, 245, 212, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 245, 212, 0.05);
+}
+
+.eduCard {
+  border-color: rgba(57, 255, 20, 0.15);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.company {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.role {
+  font-size: 0.92rem;
+  color: var(--cyan);
+  font-weight: 600;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.3rem;
+}
+
+.period {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.location {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.award {
+  font-size: 0.72rem;
+  padding: 0.25rem 0.6rem;
+  background: rgba(57, 255, 20, 0.08);
+  border: 1px solid rgba(57, 255, 20, 0.25);
+  border-radius: 999px;
+  color: var(--green-dim);
+  font-weight: 600;
+}
+
+.eduIcon {
+  display: block;
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Highlights */
+.highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+}
+
+.highlights li {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.bullet {
+  color: var(--cyan);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Stack tags */
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.stackTag {
+  padding: 0.2rem 0.6rem;
+  background: rgba(0, 245, 212, 0.05);
+  border: 1px solid rgba(0, 245, 212, 0.15);
+  border-radius: 6px;
+  font-size: 0.72rem;
+  color: var(--cyan-dim);
+  font-family: var(--font-mono);
+}
+
+/* ========= AWARDS ========= */
+.awardsSection {
+  margin-top: 1rem;
+}
+
+.awardsTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+}
+
+.awardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.awardCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  cursor: default;
+  transition: all 0.2s;
+}
+
+.awardIcon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.awardCard strong {
+  display: block;
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.awardCard p {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .timelineItem { grid-template-columns: 24px 1fr; gap: 1rem; }
+  .cardTop { flex-direction: column; }
+  .meta { align-items: flex-start; }
+}

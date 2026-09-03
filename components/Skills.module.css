@@ -1,0 +1,112 @@
+.bg {
+  background: linear-gradient(180deg, var(--bg-primary) 0%, #0c0c0c 50%, var(--bg-primary) 100%);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.category {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.category:hover {
+  border-color: rgba(0, 245, 212, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 245, 212, 0.06);
+}
+
+.catTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pill {
+  padding: 0.3rem 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: default;
+}
+
+.pill:hover {
+  border-color: rgba(0, 245, 212, 0.3);
+  color: var(--cyan);
+  background: rgba(0, 245, 212, 0.05);
+}
+
+.featured {
+  border-color: rgba(0, 245, 212, 0.35);
+  color: var(--cyan);
+  background: rgba(0, 245, 212, 0.07);
+}
+
+/* Proficiency */
+.profSection {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.5rem;
+}
+
+.profTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.profList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.profItem { display: flex; flex-direction: column; gap: 0.4rem; }
+
+.profLabel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.pct {
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-weight: 600;
+}
+
+.bar {
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--cyan) 0%, var(--green) 100%);
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 245, 212, 0.4);
+}

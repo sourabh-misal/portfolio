@@ -1,0 +1,136 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.2rem 0;
+  transition: all 0.3s ease;
+}
+
+.nav.scrolled {
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 245, 212, 0.1);
+  padding: 0.8rem 0;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #f0f0f0;
+  font-family: var(--font-mono);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.logo:hover { color: var(--cyan); }
+
+.bracket {
+  color: var(--cyan);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+}
+
+.link {
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  color: #a0a0a0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  position: relative;
+}
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--cyan);
+  border-radius: 1px;
+  transition: width 0.25s ease;
+}
+.link:hover {
+  color: #f0f0f0;
+}
+.link:hover::after,
+.linkActive::after {
+  width: 60%;
+}
+.linkActive {
+  color: var(--cyan);
+}
+
+.cta {
+  padding: 0.5rem 1.25rem;
+  background: linear-gradient(135deg, var(--cyan) 0%, var(--cyan-dim) 100%);
+  color: #0a0a0a !important;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s;
+  margin-left: 0.5rem;
+}
+.cta:hover {
+  box-shadow: 0 0 24px rgba(0, 245, 212, 0.5);
+  transform: translateY(-1px);
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--cyan);
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.mobileMenu {
+  display: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem 1.5rem;
+  background: rgba(10, 10, 10, 0.97);
+  border-bottom: 1px solid rgba(0, 245, 212, 0.1);
+}
+
+.mobileLink {
+  padding: 0.75rem 1rem;
+  color: #a0a0a0;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+.mobileLink:hover {
+  color: var(--cyan);
+  background: rgba(0, 245, 212, 0.06);
+}
+
+.mobileCta {
+  margin-left: 0;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .links { display: none; }
+  .hamburger { display: flex; }
+  .mobileMenu { display: flex; }
+}

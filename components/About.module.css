@@ -1,0 +1,206 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* === VISUAL === */
+.visual {
+  display: flex;
+  justify-content: center;
+}
+
+.cardWrapper {
+  position: relative;
+  width: 280px;
+}
+
+.avatarCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(0,245,212,0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cyan) 0%, var(--green) 100%);
+  color: #0a0a0a;
+  font-size: 2.5rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30px rgba(0, 245, 212, 0.4);
+  position: relative;
+  z-index: 1;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.tags {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.tags span {
+  background: rgba(0, 245, 212, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-align: center;
+  transition: all 0.2s;
+}
+.tags span:hover {
+  border-color: var(--border-glow);
+  color: var(--cyan);
+}
+
+/* Floating cards */
+.floatCard {
+  position: absolute;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glow);
+  border-radius: var(--radius-md);
+  padding: 0.6rem 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  font-size: 0.78rem;
+  min-width: 150px;
+  backdrop-filter: blur(10px);
+}
+
+.floatCard strong {
+  display: block;
+  color: var(--text-primary);
+  font-size: 0.8rem;
+}
+
+.floatCard p {
+  color: var(--text-muted);
+  margin: 0;
+  font-size: 0.72rem;
+}
+
+.floatCard span:first-child {
+  font-size: 1.3rem;
+}
+
+.fc1 {
+  top: -20px;
+  right: -40px;
+}
+
+.fc2 {
+  bottom: 30px;
+  left: -50px;
+}
+
+/* === CONTENT === */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.text {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1.02rem;
+}
+
+.text strong { color: var(--text-primary); }
+.text em { color: var(--cyan); font-style: normal; }
+
+/* Traits */
+.traits {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.trait {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  cursor: default;
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.traitIcon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.trait strong {
+  display: block;
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  margin-bottom: 0.15rem;
+}
+
+.trait p {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .cardWrapper {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .fc1, .fc2 { display: none; }
+}
