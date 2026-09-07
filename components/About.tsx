@@ -55,7 +55,7 @@ export default function About() {
                   <span>🚀</span>
                   <div>
                     <strong>HCLTech</strong>
-                    <p>Senior Full Stack Dev</p>
+                    <p>Full Stack &amp; AI Engineer</p>
                   </div>
                 </motion.div>
 
@@ -76,7 +76,7 @@ export default function About() {
             {/* Text content */}
             <motion.div variants={fadeUp} className={styles.content}>
               <p className={styles.text}>
-                I&apos;m <strong>Sourabh Misal</strong> — an AI &amp; Senior Full Stack Developer at{" "}
+                I&apos;m <strong>Sourabh Misal</strong> — a Full Stack &amp; AI Engineer at{" "}
                 <span className="highlight">HCLTech, Pune</span>, and a Computer Science graduate from{" "}
                 <span className="highlight">IIT Tirupati</span>.
               </p>

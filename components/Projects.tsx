@@ -16,10 +16,10 @@ const projects = [
     category: "enterprise",
     featured: true,
     icon: "🛡️",
-    title: "Vulnerability Remediation Platform",
-    desc: "Led architecture & full-stack dev of an enterprise cybersecurity platform serving 100K+ users. Modeled pentest governance lifecycle (Ingestion → Triage → Remediation → Verification → Sign-off) as a finite-state machine with immutable audit-trail transitions.",
-    tags: ["React.js", "Next.js", "TypeScript", "Azure Cosmos DB", "Azure Blob Storage", "Azure Entra ID"],
-    metrics: ["🚀 20x Project Delivery ROI", "👥 100K+ users", "⚡ 80% latency drop", "🔐 4-tier RBAC"],
+    title: "Vulnerability Remediation & AI Triage Platform",
+    desc: "Engineered an enterprise cybersecurity governance platform serving 100K+ users with a 20x delivery ROI. Modeled pentest lifecycle as a finite-state machine with immutable audit trails, integrated automated NLP vector deduplication for CWE/CVE triage, and slashed Cosmos DB latency by 80%.",
+    tags: ["React.js", "Next.js", "TypeScript", "Python", "NLP Triage", "Azure Cosmos DB", "Azure Entra ID"],
+    metrics: ["🚀 20x Project Delivery ROI", "👥 100K+ users", "⚡ 80% latency drop", "🤖 NLP Triage & Deduplication"],
     github: "#",
     demo: "#",
   },
@@ -105,7 +105,7 @@ export default function Projects() {
 
   const filtered = projects.filter((p) => {
     if (active === "All") return true;
-    if (active === "AI & ML") return p.category === "ai";
+    if (active === "AI & ML") return p.category === "ai" || p.id === "vuln-platform";
     if (active === "Enterprise") return p.category === "enterprise";
     if (active === "Web / Full Stack") return p.category === "web" || p.category === "personal";
     return true;

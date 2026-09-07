@@ -5,10 +5,10 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 import styles from "./Hero.module.css";
 
 const ROLES = [
-  "AI & Full Stack Developer",
-  "LLM & RAG Systems Engineer",
-  "Senior Full Stack Engineer",
-  "Azure Cloud Architect",
+  "Full Stack & AI Engineer",
+  "LLM & RAG Systems Developer",
+  "Full Stack Software Engineer",
+  "Cloud & Distributed Systems Engineer",
   "Machine Learning Developer",
 ];
 
@@ -185,8 +185,8 @@ export default function Hero() {
 
           {/* Description */}
           <motion.p variants={item} className={styles.description}>
-            AI &amp; Senior Full Stack Developer at <span className="highlight">HCLTech</span>. Delivered enterprise platforms with a{" "}
-            <span className="highlight">20x return on project delivery</span> — combining intelligent AI systems, fine-tuned ML models, and scalable cloud solutions on Azure &amp; Vercel. IIT Tirupati CSE Graduate.
+            Full Stack &amp; AI Engineer at <span className="highlight">HCLTech</span>. Delivered enterprise platforms with a{" "}
+            <span className="highlight">20x return on project delivery</span> — combining intelligent AI systems, automated NLP pipelines, and scalable cloud architectures on Azure &amp; Vercel. IIT Tirupati CSE Graduate.
           </motion.p>
 
           {/* CTAs */}
