@@ -47,7 +47,7 @@ export default function WhatToExpect() {
               <motion.div
                 key={item.num}
                 className={styles.card}
-                whileHover={{ y: -8, boxShadow: "0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,245,212,0.2)" }}
+                whileHover={{ y: -8, boxShadow: "0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(0, 229, 160, 0.35)" }}
                 transition={{ duration: 0.25 }}
               >
                 <div className={styles.cardTop}>

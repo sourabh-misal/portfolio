@@ -1,7 +1,18 @@
 .footer {
   border-top: 1px solid var(--border);
-  padding: 2rem 0;
-  background: #080808;
+  padding: 2.2rem 0;
+  background: #04090E;
+  position: relative;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), var(--orange), transparent);
 }
 
 .inner {
@@ -22,8 +33,18 @@
   color: var(--text-primary);
 }
 
-.bracket { color: var(--cyan); }
-.name { color: var(--text-secondary); font-size: 0.9rem; font-weight: 500; }
+.bracket {
+  background: linear-gradient(135deg, var(--accent), var(--orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.name {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
 
 .copy {
   font-size: 0.82rem;
@@ -31,7 +52,7 @@
 }
 
 .copy a {
-  color: var(--cyan);
+  color: var(--accent);
   text-decoration: none;
 }
 .copy a:hover { text-decoration: underline; }
@@ -47,7 +68,7 @@
   text-decoration: none;
   transition: color 0.2s;
 }
-.links a:hover { color: var(--cyan); }
+.links a:hover { color: var(--accent); }
 
 @media (max-width: 600px) {
   .inner { flex-direction: column; text-align: center; }

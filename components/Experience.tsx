@@ -8,13 +8,13 @@ const experiences = [
     company: "HCLTech",
     role: "Full Stack & AI Engineer",
     period: "Oct 2023 – Present",
-    location: "Pune, India",
+    location: "Bengaluru, India",
     badge: "🏆 Top Performer >9/10",
     color: "cyan",
     highlights: [
       "Delivered platforms driving a 20x return on project investment by automating pentest governance, cutting p95 DB latency by 80%, and replacing manual onboarding with event-driven SAML provisioning.",
       "Engineered enterprise cybersecurity & governance platform serving 100K+ active users on Microsoft Azure.",
-      "Built automated NLP & ML classification pipelines in Python to ingest raw security reports, de-duplicate findings via vector similarity, and auto-map vulnerabilities to standardized CWE/CVE taxonomies.",
+      "Built automated classification systems in Python to ingest raw security reports, de-duplicate findings via vector similarity, and auto-map vulnerabilities to standardized CWE/CVE taxonomies.",
       "Modeled the full pentest governance lifecycle (Ingestion → Triage → Remediation → Verification → Sign-off) as a finite-state machine with immutable audit trails.",
       "Developed predictive analytics models analyzing historical velocity to forecast fix SLAs and automatically suggest verified patch playbooks.",
       "Eliminated concurrent write corruption using optimistic locking with version vectors.",
@@ -23,7 +23,7 @@ const experiences = [
       "Secured report generation pipelines with AES-256-GCM encryption, Azure Key Vault secret rotation, and time-bound SAS URLs.",
       "Unified platform telemetry by consolidating 3+ monitoring consoles into a real-time Dynatrace APM observability dashboard.",
     ],
-    stack: ["React.js", "Next.js", "TypeScript", "Python", "NLP & Embeddings", "Azure Cosmos DB", "Azure Entra ID", "SAML 2.0", "Node.js", "Dynatrace APM"],
+    stack: ["React.js", "Next.js", "TypeScript", "Python", "Azure Cosmos DB", "Azure Entra ID", "SAML 2.0", "Node.js", "Dynatrace APM"],
   },
 ];
 
@@ -106,7 +106,7 @@ export default function Experience() {
             {education.map((edu) => (
               <div key={edu.id} className={styles.timelineItem}>
                 <div className={styles.timelineDot} aria-hidden="true">
-                  <div className={`${styles.dot} ${styles.dotGreen}`} />
+                  <div className={`${styles.dot} ${styles.dotAmber}`} />
                 </div>
                 <div className={`${styles.card} ${styles.eduCard}`}>
                   <div className={styles.cardTop}>
@@ -133,7 +133,7 @@ export default function Experience() {
                 <motion.div
                   key={a.id}
                   className={styles.awardCard}
-                  whileHover={{ y: -4, borderColor: "rgba(0,245,212,0.4)" }}
+                  whileHover={{ y: -4, borderColor: "rgba(0, 229, 160, 0.45)" }}
                   transition={{ duration: 0.2 }}
                 >
                   <span className={styles.awardIcon}>{a.icon}</span>

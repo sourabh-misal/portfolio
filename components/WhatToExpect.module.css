@@ -15,6 +15,15 @@
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 229, 160, 0.35);
+  box-shadow: 0 8px 30px rgba(0, 229, 160, 0.08);
 }
 
 .cardTop {
@@ -26,7 +35,7 @@
 .num {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: var(--cyan);
+  color: var(--accent);
   letter-spacing: 0.1em;
   font-weight: 700;
 }
@@ -39,6 +48,7 @@
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--text-primary);
+  font-family: var(--font-heading);
 }
 
 .desc {
@@ -54,7 +64,7 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--cyan), var(--green));
+  background: linear-gradient(90deg, var(--accent), var(--gold), var(--orange));
   opacity: 0;
   transition: opacity 0.3s;
 }
