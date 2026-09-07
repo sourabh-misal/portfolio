@@ -69,6 +69,19 @@ const features = [
     desc: "Replaced a manual spreadsheet-and-ticket onboarding process with an AD SAML event-driven engine serving 1,500+ users — with Zod runtime schema validation handling orphaned accounts and group membership conflicts.",
     tags: ["Active Directory", "SAML", "Zod", "Event-Driven"],
   },
+  {
+    id: "ai-triage",
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M12 2a4 4 0 0 1 4 4v1a4 4 0 0 1-8 0V6a4 4 0 0 1 4-4z" />
+        <path d="M18 14c0 3.314-2.686 6-6 6s-6-2.686-6-6" />
+        <path d="M12 20v2" /><path d="M9 22h6" />
+      </svg>
+    ),
+    title: "AI Triage & NLP Vector Deduplication",
+    desc: "Built automated NLP classification pipelines using dense vector embeddings and cosine similarity (>0.85 threshold) to de-duplicate raw scanner findings and auto-map vulnerabilities to standardized CWE/CVE taxonomies.",
+    tags: ["NLP & Embeddings", "Vector Similarity", "CWE/CVE Mapping"],
+  },
 ];
 
 const CODE = `<span class="c"># Partition key design — 80% latency reduction</span>

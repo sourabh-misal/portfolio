@@ -202,5 +202,21 @@
 }
 
 @media (max-width: 480px) {
-  .fc1, .fc2 { display: none; }
+  .cardWrapper {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  .fc1 {
+    top: -15px;
+    right: -10px;
+    min-width: 130px;
+    padding: 0.45rem 0.75rem;
+  }
+  .fc2 {
+    bottom: -15px;
+    left: -10px;
+    min-width: 130px;
+    padding: 0.45rem 0.75rem;
+  }
 }
