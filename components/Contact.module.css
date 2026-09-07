@@ -1,5 +1,5 @@
 .bg {
-  background: linear-gradient(180deg, var(--bg-primary) 0%, #0c0c0c 100%);
+  background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
 }
 
 .wrapper {
@@ -23,8 +23,9 @@
 }
 
 .available {
-  color: var(--green);
+  color: var(--accent);
   font-weight: 600;
+  font-family: var(--font-mono);
 }
 
 .socials {
@@ -43,22 +44,25 @@
   border-radius: var(--radius-md);
   text-decoration: none;
   transition: all 0.2s;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 .socialItem:hover {
   border-color: var(--border-glow);
   transform: translateX(4px);
+  box-shadow: 0 4px 20px rgba(0, 229, 160, 0.08);
 }
 
 .socialIcon {
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background: rgba(0,245,212,0.08);
-  border: 1px solid rgba(0,245,212,0.2);
+  background: rgba(0, 229, 160, 0.08);
+  border: 1px solid rgba(0, 229, 160, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--cyan);
+  color: var(--accent);
   flex-shrink: 0;
 }
 
@@ -84,7 +88,7 @@
 .noteDot {
   width: 8px;
   height: 8px;
-  background: var(--green);
+  background: var(--accent);
   border-radius: 50%;
   animation: pulse-glow 2s ease-in-out infinite;
   flex-shrink: 0;
@@ -113,6 +117,7 @@
   font-size: 0.82rem;
   color: var(--text-secondary);
   font-weight: 500;
+  font-family: var(--font-mono);
 }
 
 .field input,
@@ -127,12 +132,14 @@
   transition: border-color 0.2s, box-shadow 0.2s;
   outline: none;
   resize: vertical;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .field input:focus,
 .field textarea:focus {
-  border-color: var(--border-glow);
-  box-shadow: 0 0 0 3px rgba(0,245,212,0.08);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 229, 160, 0.15);
 }
 
 .field input::placeholder,
@@ -160,6 +167,7 @@
 .webmailLabel {
   font-size: 0.8rem;
   color: var(--text-muted);
+  font-family: var(--font-mono);
 }
 
 .webmailButtons {
@@ -187,10 +195,9 @@
 
 .webmailBtn:hover {
   border-color: var(--border-glow);
-  color: var(--cyan);
-  background: rgba(0, 245, 212, 0.05);
+  color: var(--accent);
+  background: rgba(0, 229, 160, 0.08);
 }
-
 
 .successMsg,
 .errorMsg {
@@ -203,15 +210,15 @@
 }
 
 .successMsg {
-  color: var(--green);
-  background: rgba(57,255,20,0.06);
-  border: 1px solid rgba(57,255,20,0.2);
+  color: var(--accent);
+  background: rgba(0, 229, 160, 0.08);
+  border: 1px solid rgba(0, 229, 160, 0.3);
 }
 
 .errorMsg {
   color: #ff6b6b;
-  background: rgba(255,107,107,0.06);
-  border: 1px solid rgba(255,107,107,0.2);
+  background: rgba(255, 107, 107, 0.06);
+  border: 1px solid rgba(255, 107, 107, 0.2);
 }
 
 @media (max-width: 900px) {

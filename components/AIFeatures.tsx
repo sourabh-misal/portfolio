@@ -84,11 +84,10 @@ const features = [
   },
 ];
 
-const CODE = `<span class="c"># Partition key design — 80% latency reduction</span>
-<span class="c"># Before: single partition key → hot partition skew</span>
-<span class="c"># After: composite key eliminates bottleneck</span>
+const CODE = `<span class="c">// ─── Partition Key Redesign ─── 80% latency fix</span>
+<span class="c">// Before: single partition key → hot partition skew</span>
+<span class="c">// After:  composite key eliminates bottleneck</span>
 
-<span class="c">// Cosmos DB container config (TypeScript)</span>
 <span class="k">const</span> containerDef = {
   id: <span class="s">"findings"</span>,
   partitionKey: {
@@ -97,7 +96,7 @@ const CODE = `<span class="c"># Partition key design — 80% latency reduction</
   }
 };
 
-<span class="c">// Helper: build composite partition key</span>
+<span class="c">// Build composite partition key</span>
 <span class="k">function</span> <span class="fn">buildPartitionKey</span>(projectId: string, status: string) {
   <span class="k">return</span> <span class="s">\`\${projectId}#\${status}\`</span>;  <span class="c">// e.g. "proj-123#OPEN"</span>
 }
@@ -125,7 +124,7 @@ export default function AIFeatures() {
               <motion.div
                 key={f.id}
                 className={styles.featureCard}
-                whileHover={{ y: -5, borderColor: "rgba(0,245,212,0.4)" }}
+                whileHover={{ y: -5, borderColor: "rgba(0, 229, 160, 0.45)" }}
                 transition={{ duration: 0.2 }}
               >
                 <div className={styles.featureIcon}>{f.icon}</div>
@@ -138,7 +137,7 @@ export default function AIFeatures() {
             ))}
           </motion.div>
 
-          {/* Code terminal */}
+          {/* Terminal code block */}
           <motion.div variants={fadeUp} className={styles.terminal}>
             <div className={styles.terminalHeader} aria-hidden="true">
               <span className={`${styles.dot} ${styles.red}`} />

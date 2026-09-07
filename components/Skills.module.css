@@ -1,5 +1,5 @@
 .bg {
-  background: linear-gradient(180deg, var(--bg-primary) 0%, #0c0c0c 50%, var(--bg-primary) 100%);
+  background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
 }
 
 .grid {
@@ -14,11 +14,33 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 1.5rem;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  position: relative;
+  overflow: hidden;
 }
+
+.category::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--gold), var(--orange));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
 .category:hover {
-  border-color: rgba(0, 245, 212, 0.2);
-  box-shadow: 0 4px 30px rgba(0, 245, 212, 0.06);
+  border-color: rgba(0, 229, 160, 0.35);
+  box-shadow: 0 4px 30px rgba(0, 229, 160, 0.08);
+  transform: translateY(-2px);
+}
+
+.category:hover::before {
+  opacity: 1;
 }
 
 .catTitle {
@@ -29,6 +51,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-family: var(--font-heading);
 }
 
 .pills {
@@ -38,8 +61,8 @@
 }
 
 .pill {
-  padding: 0.3rem 0.75rem;
-  background: rgba(255, 255, 255, 0.04);
+  padding: 0.35rem 0.8rem;
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--border);
   border-radius: 999px;
   font-size: 0.78rem;
@@ -47,18 +70,19 @@
   font-weight: 500;
   transition: all 0.2s;
   cursor: default;
+  font-family: var(--font-mono);
 }
 
 .pill:hover {
-  border-color: rgba(0, 245, 212, 0.3);
-  color: var(--cyan);
-  background: rgba(0, 245, 212, 0.05);
+  border-color: rgba(0, 229, 160, 0.4);
+  color: var(--accent);
+  background: rgba(0, 229, 160, 0.08);
 }
 
 .featured {
-  border-color: rgba(0, 245, 212, 0.35);
-  color: var(--cyan);
-  background: rgba(0, 245, 212, 0.07);
+  border-color: rgba(0, 229, 160, 0.35);
+  color: var(--accent);
+  background: rgba(0, 229, 160, 0.08);
 }
 
 /* Proficiency */
@@ -67,6 +91,8 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 2rem 2.5rem;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .profTitle {
@@ -74,6 +100,7 @@
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 1.5rem;
+  font-family: var(--font-heading);
 }
 
 .profList {
@@ -82,7 +109,11 @@
   gap: 1.25rem;
 }
 
-.profItem { display: flex; flex-direction: column; gap: 0.4rem; }
+.profItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
 
 .profLabel {
   display: flex;
@@ -92,21 +123,27 @@
 }
 
 .pct {
-  color: var(--cyan);
+  color: var(--accent);
   font-family: var(--font-mono);
   font-weight: 600;
 }
 
 .bar {
   height: 6px;
-  background: rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.06);
   border-radius: 3px;
   overflow: hidden;
 }
 
 .fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--cyan) 0%, var(--green) 100%);
+  background: linear-gradient(90deg, var(--accent) 0%, var(--gold) 60%, var(--orange) 100%);
   border-radius: 3px;
-  box-shadow: 0 0 10px rgba(0, 245, 212, 0.4);
+  box-shadow: 0 0 12px rgba(0, 229, 160, 0.45);
+}
+
+@media (max-width: 768px) {
+  .profSection {
+    padding: 1.5rem;
+  }
 }

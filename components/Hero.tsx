@@ -6,17 +6,17 @@ import styles from "./Hero.module.css";
 
 const ROLES = [
   "Full Stack & AI Engineer",
-  "LLM & RAG Systems Developer",
-  "Full Stack Software Engineer",
-  "Cloud & Distributed Systems Engineer",
-  "Machine Learning Developer",
+  "Cloud & Distributed Systems Architect",
+  "NLP & Vulnerability Pipeline Lead",
+  "High-Performance Systems Engineer",
+  "IIT Tirupati CSE Graduate",
 ];
 
 const STATS = [
-  { target: 20, label: "Project Delivery ROI", suffix: "x" },
+  { target: 20, label: "Project ROI", suffix: "x" },
   { target: 3, label: "Years Experience", suffix: "+" },
-  { target: 100, label: "Users Served (K+)", suffix: "K+" },
-  { target: 80, label: "DB Latency Reduced", suffix: "%" },
+  { target: 100, label: "Users Served", suffix: "K+" },
+  { target: 80, label: "Latency Reduced", suffix: "%" },
 ];
 
 function useTyped(words: string[], speed = 80, pause = 1800) {
@@ -77,7 +77,7 @@ function StatItem({ target, label, suffix }: { target: number; label: string; su
     <div className={styles.statItem} ref={ref}>
       <span className={styles.statNum}>
         {count}
-        <span className={styles.plus}>{suffix}</span>
+        <span className={styles.statSuffix}>{suffix}</span>
       </span>
       <span className={styles.statLabel}>{label}</span>
     </div>
@@ -86,80 +86,18 @@ function StatItem({ target, label, suffix }: { target: number; label: string; su
 
 export default function Hero() {
   const typed = useTyped(ROLES);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-
-  // Particle canvas
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    resize();
-    window.addEventListener("resize", resize);
-
-    const particles: { x: number; y: number; vx: number; vy: number; size: number; opacity: number; color: string }[] = [];
-    const colors = ["#00f5d4", "#39ff14", "#00c9ad"];
-    for (let i = 0; i < 80; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        size: Math.random() * 2 + 0.5,
-        opacity: Math.random() * 0.5 + 0.1,
-        color: colors[Math.floor(Math.random() * colors.length)],
-      });
-    }
-
-    let raf: number;
-    const draw = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach((p) => {
-        p.x += p.vx;
-        p.y += p.vy;
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = p.color;
-        ctx.globalAlpha = p.opacity;
-        ctx.fill();
-      });
-      ctx.globalAlpha = 1;
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 120) {
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = "#00f5d4";
-            ctx.globalAlpha = (1 - dist / 120) * 0.12;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-          }
-        }
-      }
-      raf = requestAnimationFrame(draw);
-    };
-    draw();
-    return () => { window.removeEventListener("resize", resize); cancelAnimationFrame(raf); };
-  }, []);
 
   const container = { hidden: {}, show: { transition: { staggerChildren: 0.12 } } };
   const item = { hidden: { opacity: 0, y: 30 }, show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } } };
 
   return (
     <section id="home" className={styles.hero}>
-      <div className={styles.heroBg} />
-      <canvas ref={canvasRef} className={styles.canvas} aria-hidden="true" />
+      {/* Animated gradient mesh background */}
+      <div className={styles.meshBg} aria-hidden="true">
+        <div className={styles.meshOrb1} />
+        <div className={styles.meshOrb2} />
+        <div className={styles.meshOrb3} />
+      </div>
       <div className={styles.overlay} aria-hidden="true" />
 
       <div className={`container ${styles.content}`}>
@@ -167,7 +105,7 @@ export default function Hero() {
           {/* Badge */}
           <motion.div variants={item} className={styles.badge}>
             <span className={styles.badgeDot} />
-            🇮🇳 Open to Work · Anywhere in India
+            🌍 Open to Work · Worldwide
           </motion.div>
 
           {/* Name */}
@@ -178,21 +116,21 @@ export default function Hero() {
 
           {/* Role typewriter */}
           <motion.p variants={item} className={styles.role}>
-            <span className={styles.rolePrefix}>I&apos;m an </span>
+            <span className={styles.rolePrefix}>I am a </span>
             <span className={styles.typed}>{typed}</span>
             <span className={styles.cursor} aria-hidden="true">|</span>
           </motion.p>
 
           {/* Description */}
           <motion.p variants={item} className={styles.description}>
-            Full Stack &amp; AI Engineer at <span className="highlight">HCLTech</span>. Delivered enterprise platforms with a{" "}
-            <span className="highlight">20x return on project delivery</span> — combining intelligent AI systems, automated NLP pipelines, and scalable cloud architectures on Azure &amp; Vercel. IIT Tirupati CSE Graduate.
+            Full Stack & AI Engineer at <span className="highlight">HCLTech</span>. Building enterprise platforms with a{" "}
+            <span className="highlight">20x return on project delivery</span> — scalable distributed systems, cloud architectures on Azure, and modern React/Next.js frontends. IIT Tirupati CSE Graduate.
           </motion.p>
 
           {/* CTAs */}
           <motion.div variants={item} className={styles.actions}>
             <a href="#projects" className="btn btn-primary">
-              View Work &amp; 20x ROI Projects <ArrowRight size={18} />
+              View Work &amp; Projects <ArrowRight size={18} />
             </a>
             <a href="#contact" className="btn btn-ghost">
               Get In Touch
@@ -201,11 +139,8 @@ export default function Hero() {
 
           {/* Stats */}
           <motion.div variants={item} className={styles.stats}>
-            {STATS.map((s, i) => (
-              <div key={s.label} className={styles.statGroup}>
-                <StatItem target={s.target} label={s.label} suffix={s.suffix} />
-                {i < STATS.length - 1 && <div className={styles.divider} aria-hidden="true" />}
-              </div>
+            {STATS.map((s) => (
+              <StatItem key={s.label} target={s.target} label={s.label} suffix={s.suffix} />
             ))}
           </motion.div>
         </motion.div>

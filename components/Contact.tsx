@@ -38,7 +38,7 @@ const socials = [
   {
     icon: <MapPin size={20} />,
     label: "Location",
-    value: "Pune, India · Open to work across India",
+    value: "Bengaluru, India · Open to work worldwide",
     href: "#",
   },
 ];
@@ -58,7 +58,7 @@ export default function Contact() {
     return { sub, bodyText };
   };
 
-  // Open native default email client (Apple Mail, Thunderbird, Windows Mail, Outlook app, etc.)
+  // Open native default email client
   const handleOpenDefaultMail = (e: React.FormEvent) => {
     e.preventDefault();
     const { sub, bodyText } = getMailParams();
@@ -108,7 +108,7 @@ export default function Contact() {
             {/* Info */}
             <div className={styles.info}>
               <p className={styles.tagline}>
-                I&apos;m currently <span className={styles.available}>🇮🇳 open to work across India</span> —
+                I&apos;m currently <span className={styles.available}>🌍 open to work worldwide</span> —
                 full-time, remote, or hybrid. Let&apos;s build something great together.
               </p>
               <div className={styles.socials}>
